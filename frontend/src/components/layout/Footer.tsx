@@ -1,0 +1,52 @@
+import { Heart } from 'lucide-react'
+import { Link } from 'react-router-dom'
+
+export function Footer() {
+  return (
+    <footer className="relative py-8 px-6 mt-12 mb-6">
+      <div className="max-w-7xl mx-auto glass rounded-3xl p-8 md:p-12 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-tr from-white/40 to-white/10 opacity-50 pointer-events-none" />
+
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="flex flex-col gap-4">
+            <Link to="/" className="flex items-center gap-2 group w-fit">
+              <div className="p-2 bg-primary/10 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                <Heart className="w-6 h-6 text-primary fill-primary" />
+              </div>
+              <span className="font-display text-2xl font-bold text-text">Auth Boilerplate</span>
+            </Link>
+            <p className="text-sm text-text-light max-w-xs leading-relaxed">
+              Um template premium com autenticação JWT, integração Prisma/MongoDB, e design system completo.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h3 className="text-sm font-bold text-text uppercase tracking-wider">Navegação</h3>
+            <div className="flex flex-col gap-2">
+              <Link to="/" className="text-sm text-text-light hover:text-primary transition-colors flex items-center gap-2 group">
+                <span className="w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                Início
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h3 className="text-sm font-bold text-text uppercase tracking-wider">Sobre o projeto</h3>
+            <p className="text-sm text-text-light bg-white/40 p-4 rounded-xl border border-white/40">
+              Template em React usando Vite, Tailwind CSS v4, Zustand e backend Express/Prisma.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-gray-100/50 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
+          <p className="text-xs text-text-muted font-medium">
+            © {new Date().getFullYear()} Auth Boilerplate. Template open-source.
+          </p>
+          <p className="text-xs text-text-muted flex items-center gap-1 font-medium bg-white/30 px-3 py-1 rounded-full border border-white/20">
+            Construído para escalar <Heart className="w-3 h-3 text-primary fill-primary" />
+          </p>
+        </div>
+      </div>
+    </footer>
+  )
+}
